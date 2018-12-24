@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "413595542573",
+    "firebase_url": "https://octopuscoin-3a04d.firebaseio.com",
+    "project_id": "octopuscoin-3a04d",
+    "storage_bucket": "octopuscoin-3a04d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413595542573:android:e9ef9a16c598f01b",
+        "android_client_info": {
+          "package_name": "com.foroptc.octopuscash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413595542573-kttcmm20jnv2id7ddk0hkoi6cne8ll97.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRlL0iheHcg31v9a37tkUdLgsYT5iC3bI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Octopus Cash</string>
+
+    <string name="placeholder"> ------ </string>
+
+    <string name="offerWalls">Muro de ofertas</string>
+    <string name="api_offers">Ofertas Api</string>
+
+    <string name="offer_details">Detalles de oferta</string>
+    <string name="complete_offer">Completar Oferta</string>
+    <string name="complete_later">La completare despues</string>
+    <string name="earn">Consigue</string>
+    <string name="on_this_offer">En esta oferta</string>
+    <string name="waiting_for_completion">Esperando a completarse...</string>
+    <string name="checking_offer_status">Comprobando estado de Oferta..</string>
+
+    <string name="offer_completed">Has completado esta oferta.</string>
+    <string name="offer_rejected">Oferta rechazada.</string>
+    <string name="offer_processing">Estamos procesando esta oferta.</string>
+
+    <string name="home">Home</string>
+    <string name="instructions">Instrucciones</string>
+    <string name="refer">Invita &amp; Gana</string>
+    <string name="redeem">Canjear</string>
+    <string name="about">Sobre Nosotros</string>
+    <string name="transactions">Transacciones</string>
+    <string name="share">Comparte la App!</string>
+    <string name="rate_this_app">Valoranos!</string>
+    <string name="policy">Politica de privacidad.</string>
+    <string name="contact">Contacto</string>
+
+    <string name="loading">Cargando ..</string>
+    <string name="no_transactions">No hemos encontrado transacciones!</string>
+    <string name="nothing_found">No hemos encontrado nada :( </string>
+
+    <string name="congratulations">Felicidades !!</string>
+    <string name="successfull_received">Tus coins estan de camino!</string>
+    <string name="invitation_bonus_received">Bonus de invitación conseguido!</string>
+    <string name="refer_bonus_received">Bonus de referido conseguido!</string>
+
+
+    <string name="adnetwork_disabled">AdNetwork Desactivada</string>
+    <string name="adnetwork_disabled_mesage">Hemos desactivado temporalmenta esta AdNetwork, Espera un poco y vuelve a intentarlo!</string>
+
+    <string name="success">Exito!</string>
+    <string name="rejected">Rechazado</string>
+    <string name="failed">Fallida</string>
+    <string name="pending">Procesando</string>
+
+    <string name="redeem_success_title"> Canjeo Correcto !</string>
+    <string name="redeem_recevied">Solicitud de canjeo recibido para:</string>
+    <string name="redeem_succes_message"> Puedes ver el status de tu canjeo en el apartado "Transacciones" </string>
+
+    <string name="error">Error..</string>
+    <string name="enter_something">Parece que nuestro pulpo se ha echado una siesta... Vuelve a intentarlo!</string>
+
+    <!--  Currency -->
+    <string name="app_currency">Puntos</string>
+
+    <string name="updating_balance">Actualizando Balance</string>
+    <string name="update_balance">Balance Actualizado</string>
+
+    <!-- Share -->
+    <string name="share_text">Hola! Mira que app he encontrado para ganar dinero:</string>
+
+    <!-- Refer -->
+    <string name="invite">Invita Amigos</string>
+    <string name="get_bonus">Conseguir Bonus</string>
+    <string name="tap_to_copy">Toca para copiar</string>
+    <string name="refer_code">Tu codigo como pulpo digo como referido es:</string>
+    <string name="placeholder_referer"> Inserta tu codigo de invitación</string>
+    <string name="referDescription">Tu y tu referido conseguis:</string>
+    <string name="refer_code_copied">Codigo de referido copiado al portapapeles</string>
+
+    <string name="refer_text">Usando mi codigo de referido : </string>
+    <string name="self_refer">Ups pillín no puedes usar tu propio codigo de referido!</string>
+    <string name="invalid_code">Ups Este codigo no existe</string>
+    <string name="enter_valid_code">Inserta un codigo valido</string>
+    <string name="choose_one">Elige uno</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">551019701964537</string>
+    <string name="fb_login_protocol_scheme">fb551019701964537</string>
+
+    <!-- ADMOB AppID -->
+    <string name="admob_appId" translatable="false">ca-app-pub-9322861862269853~4707306129</string>
+
+    <!-- ADMOB Banner -->
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-9322861862269853/2274328878</string>
+
+    <!-- ADMOB Interstitial -->
+    <string name="admob_interstitial_delay">5000</string>
+    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-9322861862269853/7849255039</string>
+
+    <!--  General Texts  -->
+    <string name="click_back_again">Por favor pulsa "Back" para salir.</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="proceed">Proceed</string>
+    <string name="oops">Oops ..</string>
+    <string name="no_enough">No es suficiente :(</string>
+    <string name="to">a</string>
+    <string name="get">Conseguir</string>
+
+    <integer name="daily_checkin_timer_size">26</integer>
+    <string name="bonus_taken">Tu bonus ya ha sido recogido ..</string>
+    <string name="try_after">Vuelve a intentarlo en un tiempo!!</string>
+    <string name="daily_reward_taken">Tu Bonus diario ya ha sido recogido \n\n Vuelve a intentarlo en un tiempo ..</string>
+    <string name="server_problem">Problemas en el servidor! Vuelve a intentarlo en un rato</string>
+
+    <string name="title_server_problem">El servidor no responde !</string>
+    <string name="msg_server_problem">Ya la ha vuelto a liar nuestro pulpo! Le estamos castigando , vuelve a intentarlo en un rato</string>
+
+    <string name="offerwall_not_loaded">Cargando .. \n\n Vuelve a intentarlo en un ratito !!</string>
+
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_opened">El cajón de navegación está abierto</string>
+    <string name="navigation_drawer_closed">El cajón de navegación está cerrado</string>
+    <string name="tag_nav_drawer_main_entry">nav_drawer_main_entry</string>
+
+    <!-- Login And SignUp -->
+    <string name="settings_file">account</string>
+    <string name="settings_account_id">account_id</string>
+    <string name="settings_account_username">account_username</string>
+    <string name="settings_account_access_token">access_token</string>
+
+    <string name="processing">Procesando ..</string>
+    <string name="please_wait">Por favor, espera ..</string>
+
+    <string name="update">Actualizando</string>
+    <string name="update_app">Actualiza nuestra app para ganar aun más</string>
+    <string name="update_app_description">Muchas más formas de ganar dinero nuevas!.</string>
+
+    <string name="retry">Reintentar</string>
+    <string name="title_network_error">Necesitamos internet para funcionar :( !</string>
+    <string name="msg_network_error">Comprueba tu conexión a internet</string>
+    <string name="msg_account_blocked">Esta cuenta ha sido bloqueada por un Moderador... No esta bien hacer trampas</string>
+    <string name="msg_no_such_user_in_bd">No encontramos ese usuario en nuestra Base de datos</string>
+    <string name="msg_password_reset_link_sent">Te hemos enviado un link a tu email para cambiar tu contraseña!.</string>
+
+    <string name="action_login">Entrar</string>
+    <string name="action_signup">Registrarse</string>
+    <string name="title_activity_login">Entrar</string>
+    <string name="title_activity_sign_up">Registrarse</string>
+    <string name="action_continue">Continuar</string>
+    <string name="action_forgot_password">Contraseña Olvidada?</string>
+
+    <string name="placeholder_password">Contraseña</string>
+    <string name="placeholder_login">Usuario</string>
+    <string name="placeholder_fullname">Nombre completo</string>
+    <string name="placeholder_email">Email</string>
+
+    <string name="error_field_empty">Campos obligatorios sin rellenar.</string>
+    <string name="error_wrong_format">Formato incorrecto.</string>
+    <string name="error_signin">Usuario o Contraseña incorrecto</string>
+    <string name="error_login_taken">Ups este usuario ya esta pillado!</string>
+    <string name="error_email_taken">Ups este Email ya existe</string>
+    <string name="please_login">Porfavor logeate ..</string>
+    <string name="error_email">Email invalido ..</string>
+    <string name="error_data_loading">Un error ha ocurrído mientras cargabamos! Comprueba tu conexión</string>
+    <string name="error_small_password">Minimo 6 Caracteres</string>
+    <string name="error_small_username">Minimo 5 Caracteres</string>
+
+
+    <string name="error_device_exists">Este dispositivo ya cuenta con una cuenta !</string>
+    <string name="error_device_exists_description">Solo permitimos una cuenta por dispositivo por favor entra en tu cuenta de siempre ..</string>
+
+    <!-- App INTRO Titles & Description -->
+    <string name="slide_1_title">Consigue puntos!</string>
+    <string name="slide_2_title">Consigue dinero y GC</string>
+    <string name="slide_3_title">Consigue dinero y GC</string>
+    <string name="slide_4_title">Consigue dinero y GC</string>
+    <string name="slide_1_desc">Acumula puntos descargando Apps!</string>
+    <string name="slide_2_desc">Invita a tus amigos al cine!</string>
+    <string name="slide_3_desc">Invita a tus amigos a cenar!</string>
+    <string name="slide_4_desc">Consigue descuentos!</string>
+
+    <!-- Instructions on How to use App -->
+    <string name="instructions_content" translatable="false">
+        <![CDATA[
+        <b>Para aplicaciones: </b><br/>
+        1. Selecciona una app de la lista para instalar.<br/>
+        2. Click "Instalar" cuando estes en la Play Store. <br/>
+        3. Espera a que se instale y abrela.<br/>
+        4. Prueba la aplicación al menos 45 segundos o 1 minuto.<br/>
+        5. Si habia una tarea especifica mencionada en la lista, (Por ejemplo, Registrarse, Alcanzar el nivel 3, Navegar por 5 minutos.) deberas completarlo.<br/>
+        6. Si no te han llegado tus puntos vuelve al menu principal y pulsa "Refresh".<br/>
+        7. Si aun no te han llegado espera unos minutos a veces nuestro pulpo se marea!.<br/><br/>
+
+        Thanks/<br/><br/>
+
+        &copy; 2018 <b> Foro-Ptc </b> by <b>DanyDanay and VGood</b> ]]>
+    </string>
+
+</resources>
