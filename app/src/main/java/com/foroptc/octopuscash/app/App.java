@@ -14,6 +14,7 @@ import android.support.multidex.MultiDexApplication;
 import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import com.google.android.gms.location.FusedLocationProviderClient;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.android.volley.Request;
@@ -53,6 +54,7 @@ import eu.giovannidefrancesco.easysharedprefslib.SharedPreferenceStorage;
 public class App extends MultiDexApplication implements Constants {
 
     public static final String TAG = App.class.getSimpleName();
+    private static final String CountryCode1 = "idiota" ;
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
@@ -354,6 +356,7 @@ public class App extends MultiDexApplication implements Constants {
     }
 
     //get location name from coordinates
+
     public String getAddress(double lat, double lng) {
         String currentLocation = "";
 
@@ -371,14 +374,21 @@ public class App extends MultiDexApplication implements Constants {
             add = add + "\n" + obj.getSubThoroughfare();
 
             Log.v("IGA", "Address" + add);
-            return appStorage.get(obj.getCountryCode(),"US");
+            String CountryCode;
+            CountryCode = appStorage.get(obj.getCountryCode(), "US");
+            return  CountryCode;
 
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return appStorage.get(obj.getCountryCode(),"US");
+return CountryCode1;
+    }
+
+
+    public String getCountryCode(){
+        return   appStorage.get("CountryCode","US");
 
     }
 
@@ -389,39 +399,35 @@ public class App extends MultiDexApplication implements Constants {
 
 
 
+  /*
 
+//
+    if(!appStorage.get("gotCountry",false)){
+//
+//
+   CustomRequest balanceRequest = new CustomRequest(Request.Method.GET, "http://ip-api.com/json",null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            try {
 
+                                appStorage.store("city",response.getString("city"));
+                                appStorage.store("country",response.getString("country"));
+                                appStorage.store("countryCode",response.getString("countryCode"));
+                                appStorage.store("gotCountry",true);
 
+                            } catch (JSONException e) { //e.printStackTrace();
+                            }
 
-//    public String getCountryCode(){
-//
-//
-//        if(!appStorage.get("gotCountry",false)){
-//
-//
-//            CustomRequest balanceRequest = new CustomRequest(Request.Method.GET, "http://ip-api.com/json",null,
-//                    new Response.Listener<JSONObject>() {
-//                        @Override
-//                        public void onResponse(JSONObject response) {
-//                            try {
-//
-//                                appStorage.store("city",response.getString("city"));
-//                                appStorage.store("country",response.getString("country"));
-//                                appStorage.store("countryCode",response.getString("countryCode"));
-//                                appStorage.store("gotCountry",true);
-//
-//                            } catch (JSONException e) { //e.printStackTrace();
-//                            }
-//
-//                        }},new Response.ErrorListener() {
-//                @Override
-//                public void onErrorResponse(VolleyError error) {}});
-//
-//            App.getInstance().addToRequestQueue(balanceRequest);
-//        }
-//
-//        return appStorage.get("countryCode","US");
-//    }
+                        }},new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {}});
+
+            App.getInstance().addToRequestQueue(balanceRequest);
+        }
+
+        return appStorage.get("countryCode","US");
+    }*/
 
     @SuppressWarnings("unchecked")
     public <T> T get(String name, T value) {
