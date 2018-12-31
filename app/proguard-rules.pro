@@ -20,7 +20,18 @@
 -keep class dmax.dialog.** {
     *;
 }
+
 -ignorewarnings
+
+
+
+
+
+
+
+
+
+
 -keep class * {
     public private *;
 }
