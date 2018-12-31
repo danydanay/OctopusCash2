@@ -305,15 +305,15 @@ public class App extends MultiDexApplication implements Constants {
 
         if(!appStorage.get("gotCountry",false)){
 
-            CustomRequest balanceRequest = new CustomRequest(Request.Method.GET, "http://ip-api.com/json",null,
+            CustomRequest balanceRequest = new CustomRequest(Request.Method.GET, "http://ip-api.com/json/2.5.5.5?fields=country,countryCode,city",null,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
                             try {
 
-                                appStorage.store("city",response.getString("city"));
                                 appStorage.store("country",response.getString("country"));
                                 appStorage.store("countryCode",response.getString("countryCode"));
+                                appStorage.store("city",response.getString("city"));
                                 appStorage.store("gotCountry",true);
 
                             } catch (JSONException e) { //e.printStackTrace();

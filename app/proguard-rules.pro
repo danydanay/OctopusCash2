@@ -20,6 +20,10 @@
 -keep class dmax.dialog.** {
     *;
 }
+-ignorewarnings
+-keep class * {
+    public private *;
+}
 
 -dontwarn okhttp3.**
 -dontwarn com.squareup.picasso.**
