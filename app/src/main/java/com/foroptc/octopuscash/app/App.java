@@ -387,8 +387,9 @@ return CountryCode1;
     }
 
 
-    public String getCountryCode(){
-        return   appStorage.get("CountryCode","US");
+    public String getCountryCode(String CountryCode){
+        return   CountryCode;
+
 
     }
 

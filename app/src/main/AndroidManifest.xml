@@ -117,4 +117,10 @@
     package="com.google.android.gms.location.sample.basiclocationsample"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    android:usesCleartextTraffic="true"
+
+
 </manifest>
