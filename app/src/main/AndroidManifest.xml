@@ -114,10 +114,6 @@
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
     </application>
-    package="com.google.android.gms.location.sample.basiclocationsample"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
 
 </manifest>
 <manifest android:targetSandboxVersion="1">
