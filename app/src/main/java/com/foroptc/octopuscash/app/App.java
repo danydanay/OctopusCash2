@@ -2,21 +2,12 @@ package com.foroptc.octopuscash.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
-import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
-import android.util.Log;
-import com.google.android.gms.location.FusedLocationProviderClient;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,10 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import com.foroptc.octopuscash.BuildConfig;
@@ -39,9 +27,6 @@ import com.foroptc.octopuscash.R;
 import com.foroptc.octopuscash.constants.Constants;
 import com.foroptc.octopuscash.utils.CustomRequest;
 import com.foroptc.octopuscash.utils.LruBitmapCache;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import eu.giovannidefrancesco.easysharedprefslib.IStorage;
@@ -50,11 +35,10 @@ import eu.giovannidefrancesco.easysharedprefslib.SharedPreferenceStorage;
 /**
  * Created by DroidOXY
  */
- 
+
 public class App extends MultiDexApplication implements Constants {
 
     public static final String TAG = App.class.getSimpleName();
-    private static final String CountryCode1 = "idiota" ;
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
@@ -281,22 +265,22 @@ public class App extends MultiDexApplication implements Constants {
                 appStorage.store("VENDOR_SUPPORT_URL", configObj.getString("VENDOR_SUPPORT_URL"));
                 appStorage.store("INSTRUCTIONS_ACTIVE", configObj.getBoolean("INSTRUCTIONS_ACTIVE"));
 
-				// API Offers
+                // API Offers
                 appStorage.store("API_OFFERS_ACTIVE", configObj.getBoolean("API_OFFERS_ACTIVE"));
-				
-				// OfferToro API Offers
+
+                // OfferToro API Offers
                 appStorage.store("OfferToroAPIOffersActive", configObj.getBoolean("OfferToroAPIOffersActive"));
-				
+
                 appStorage.store("AdGateMediaActive", configObj.getBoolean("AdGateMediaActive"));
                 appStorage.store("AdGate_Media_WallId", configObj.getString("AdGate_Media_WallId"));
-				
+
                 appStorage.store("SuperRewardsActive", configObj.getBoolean("SuperRewardsActive"));
                 appStorage.store("SuperRewards_HashId", configObj.getString("SuperRewards_HashId"));
-				
+
                 appStorage.store("FyberActive", configObj.getBoolean("FyberActive"));
                 appStorage.store("Fyber_AppId", configObj.getString("Fyber_AppId"));
                 appStorage.store("Fyber_SecurityToken", configObj.getString("Fyber_SecurityToken"));
-				
+
                 appStorage.store("AdScendMediaActive", configObj.getBoolean("AdScendMediaActive"));
                 appStorage.store("AdScendMedia_PubId", configObj.getString("AdScendMedia_PubId"));
                 appStorage.store("AdScendMedia_AdwallId", configObj.getString("AdScendMedia_AdwallId"));
@@ -317,96 +301,11 @@ public class App extends MultiDexApplication implements Constants {
 
     }
 
-    //Get last known location coordinates
-    private void getLastLocationNewMethod() {
-        FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getApplicationContext());
-        if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            //session.saveCurrentLocation("Everywhere");
-            return;
-        }
-        mFusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                // GPS location can be null if GPS is switched off
-                if (location != null) {
-                    double myLat = location.getLatitude();
-                    double myLon = location.getLongitude();
+    public String getCountryCode(){
 
-                    getAddress(myLat, myLon);
+        if(!appStorage.get("gotCountry",false)){
 
-
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("MapDemoActivity", "Error trying to get last GPS location");
-                e.printStackTrace();
-
-            }
-        });
-    }
-
-    //get location name from coordinates
-
-    public String getAddress(double lat, double lng) {
-        String currentLocation = "";
-
-        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.ENGLISH);
-        try {
-            List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
-            Address obj = addresses.get(0);
-            String add = obj.getAddressLine(0);
-            add = add + "\n" + obj.getCountryName();
-            add = add + "\n" + obj.getCountryCode();
-            add = add + "\n" + obj.getAdminArea();
-            add = add + "\n" + obj.getPostalCode();
-            add = add + "\n" + obj.getSubAdminArea();
-            add = add + "\n" + obj.getLocality();
-            add = add + "\n" + obj.getSubThoroughfare();
-
-            Log.v("IGA", "Address" + add);
-            String CountryCode;
-            CountryCode = appStorage.get(obj.getCountryCode(), "US");
-            return  CountryCode;
-
-
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-return CountryCode1;
-    }
-
-
-    public String getCountryCode(String CountryCode){
-        return   CountryCode;
-
-
-    }
-
-
-
-
-
-
-
-
-  /*
-
-//
-    if(!appStorage.get("gotCountry",false)){
-//
-//
-   CustomRequest balanceRequest = new CustomRequest(Request.Method.GET, "http://ip-api.com/json",null,
+            CustomRequest balanceRequest = new CustomRequest(Request.Method.GET, "https://extreme-ip-lookup.com/json/",null,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
@@ -428,7 +327,7 @@ return CountryCode1;
         }
 
         return appStorage.get("countryCode","US");
-    }*/
+    }
 
     @SuppressWarnings("unchecked")
     public <T> T get(String name, T value) {
